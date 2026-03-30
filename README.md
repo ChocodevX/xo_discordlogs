@@ -2,27 +2,21 @@
 
 High-performance, rate-limit aware Discord logging for FiveM (ESX).
 
-## คุณสมบัติ (Key Features)
-- **ระบบคิวอัจฉริยะ**: จัดการข้อจำกัดอัตราของ Discord (429) อัตโนมัติสำหรับแต่ละช่องทาง webhook.
-- **มีประสิทธิภาพ**: ใช้ `ox_lib` สำหรับดึงข้อมูลเมตาดาต้าและการเพิ่มประสิทธิภาพ.
-- **บันทึกการตายอย่างละเอียด**: แยกแยะระหว่างการตายโดยบังเอิญ, การฆ่าตัวตาย, และการถูกฆ่า (รวมทั้งติดตามอาวุธ).
-- **บันทึกการถูกฆ่าโดยยานพาหนะ**: ตรวจจับว่าผู้เล่นถูกฆ่าโดยยานพาหนะ (ถูกรถชน/ถูกพุ่งชน).
-- **โซนที่บล็อก**: กำหนดโซนที่ไม่ต้องการให้บันทึกการตาย เช่น โซน PVP.
-- **ภาพหน้าจอ**: ถ่ายภาพหน้าจอฝั่งลูกค้าเมื่อเกิดการตายหรือเหตุการณ์ที่กำหนดเอง (ต้องการ `screenshot-basic`).
+## Key Features
+
+- **Smart Queue System**: Automatically handles Discord rate limits (429) per webhook channel.
+- **High Performance**: Optimized using `ox_lib` for metadata retrieval and efficiency.
+- **Detailed Death Logs**: Distinguishes between accidents, suicides, and player kills (including weapon tracking).
+- **Vehicle Kill Tracking**: Detects when players are killed or run over by vehicles.
+- **Blacklisted Zones**: Define zones where death logging is disabled (e.g., PVP zones).
+- **Client Screenshots**: Automatically capture screenshots on death or custom events (requires `screenshot-basic`).
 
 ## ความต้องการ
 - [ox_lib](https://github.com/overextended/ox_lib)
 - [es_extended](https://github.com/esx-framework/esx_core)
 - [screenshot-basic](https://github.com/citizenfx/screenshot-basic)
 
-## การติดตั้ง
-1. ดาวน์โหลดและตรวจสอบให้แน่ใจว่าติดตั้งความต้องการทั้งหมดแล้ว.
-2. โคลนหรือแตกไฟล์ทรัพยากรนี้ลงในโฟลเดอร์ `resources` ของคุณ.
-3. เพิ่ม `ensure elite_discordlogs` ในไฟล์ `server.cfg`.
-
-## การใช้งาน (Exports)
-
-ใช้ export ด้านล่างในสคริปต์ฝั่งเซิร์ฟเวอร์เพื่อส่งบันทึก:
+## (Exports)
 
 ```lua
 exports.elite_discordlogs:Discord({
@@ -40,8 +34,6 @@ exports.elite_discordlogs:Discord({
     }
 })
 ```
-
-### ตัวอย่าง: บันทึกงานแบบกำหนดเอง
 ```lua
 local xPlayer = ESX.GetPlayerFromId(source)
 exports.elite_discordlogs:Discord({
