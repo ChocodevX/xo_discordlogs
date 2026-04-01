@@ -28,8 +28,7 @@ Config.GeneralWebhooks = {
         show_killer_information = true, -- แสดงข้อมูลผู้สังหาร
         short_description = true,       -- แสดงข้อมูลแบบสั้น
         blocked_zone = {                -- Block Zone ที่ไม่ต้องการให้แจ้ง Log
-            { coords = vector3(-3670.6630859375, 3026.4567871094, 671.33630371094), radius = 150.0 },
-            { coords = vector3(3611.1, 1586.88, 449.64),                            radius = 150.0 },
+            { coords = vector3(0, 0, 0), radius = 0.0 },
         }
     },
     chat = {
